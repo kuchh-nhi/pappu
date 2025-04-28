@@ -1,109 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Pappu! 🎉</title>
+  <title>Secret Page for Bhiduu</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      font-family: sans-serif;
       text-align: center;
-      padding: 50px;
-      color: #2d2d2d;
+      background-color: #ffe6e6;
     }
-
     h1 {
-      font-size: 48px;
-      color: #ff4d4d;
-      margin-bottom: 10px;
+      color: red;
     }
-
-    .cake {
-      font-size: 90px;
-      margin: 20px 0;
-    }
-
-    .message-box {
-      background-color: #fffaf0;
-      border-radius: 12px;
-      padding: 25px;
-      max-width: 650px;
-      margin: 30px auto;
-      box-shadow: 0 0 15px rgba(255, 100, 100, 0.2);
-    }
-
-    .message-box p {
+    .roast {
+      margin-top: 50px;
       font-size: 20px;
-      line-height: 1.7;
-      margin-bottom: 15px;
     }
-
-    form {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 40px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .video-container {
+      margin-top: 60px;
     }
-
-    textarea, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-
-    button {
-      background-color: #ff4d4d;
-      color: white;
-      cursor: pointer;
-    }
-
-    .confetti {
-      font-size: 24px;
-      animation: float 5s infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0); }
-    }
-
-    audio {
-      margin-top: 40px;
+    video {
+      width: 80%;
+      max-width: 600px;
+      border: 2px solid red;
+      border-radius: 10px;
     }
   </style>
+  <script>
+    // Bhiduu password
+    var correctPassword = "bhiduu123"; // yaha apna password set kar
+
+    function checkPassword() {
+      var enteredPassword = prompt("Password daal bhiduu:");
+      if (enteredPassword === correctPassword) {
+        document.getElementById('content').style.display = 'block';
+      } else {
+        alert("Galat password! 🤣 Bhiduu, sahi password daal!");
+        window.location.href = "https://www.google.com"; // galat password pe kahin aur bhej de
+      }
+    }
+    window.onload = checkPassword;
+  </script>
 </head>
 <body>
-  <div class="confetti">🎊🎉✨🎈</div>
-  <h1>Happy Birthday, Pappu! 🥳</h1>
-  <div class="cake">🎂</div>
-
-  <div class="message-box">
-    <p><strong>Happiest Birthday Dear...</strong></p>
-    <p>Thanks for being one of the happy and safe spaces for me.</p>
-    <p>May you achieve everything you deserve and get yourself surrounded by one of the best people.</p>
-    <p>Just letting you know that I will be there for you in any situation, anytime, anywhere and anyhow — and when I say it, I mean it. ❤️</p>
+<div id="content" style="display:none;">
+  <h1>😂 Abey <span style="color:blue">Chomu</span>!</h1>
+  <div class="roast">
+    <p>Tune socha QR code se kuch cool milega?</p>
+    <p>Mil gaya na... apni aukaat ka live telecast 😎</p>
+    <p>Gaali of the Day: "Tera dimaag Windows Vista pe chal raha hai!"</p>
   </div>
 
-  <!-- Message form (no name asked) -->
-  <form action="https://formsubmit.co/rajwriter86@gmail.com" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <h2>💌 Drop a Message</h2>
-    <textarea name="message" placeholder="Write your message here..." required></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-  <!-- Optional: Add background music -->
-  <audio controls autoplay>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio tag.
-  </audio>
+  <div class="video-container">
+    <p><strong>Bonus Video Tere Liye 🤣:</strong></p>
+    <video controls>
+      <source src="https://raw.githubusercontent.com/kuchh-nhi/Bhiduu/main/6078098994150511919.mp4" type="video/mp4">
+      Tera browser video support nahi karta be!
+    </video>
+  </div>
+</div>
 </body>
 </html>
