@@ -1,62 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Secret Page for Bhiduu</title>
+  <meta charset="UTF-8">
+  <title>Secret Message</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background-color: #fefae0;
       text-align: center;
-      background-color: #ffe6e6;
+      padding-top: 100px;
     }
-    h1 {
-      color: red;
+    #content {
+      display: none;
     }
-    .roast {
-      margin-top: 50px;
-      font-size: 20px;
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      border-radius: 12px;
     }
-    .video-container {
-      margin-top: 60px;
-    }
-    video {
-      width: 80%;
-      max-width: 600px;
-      border: 2px solid red;
-      border-radius: 10px;
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
     }
   </style>
-  <script>
-    // Bhiduu password
-    var correctPassword = "bhiduu123"; // yaha apna password set kar
-
-    function checkPassword() {
-      var enteredPassword = prompt("Password daal bhiduu:");
-      if (enteredPassword === correctPassword) {
-        document.getElementById('content').style.display = 'block';
-      } else {
-        alert("Galat password! 🤣 Bhiduu, sahi password daal!");
-        window.location.href = "https://www.google.com"; // galat password pe kahin aur bhej de
-      }
-    }
-    window.onload = checkPassword;
-  </script>
 </head>
 <body>
-<div id="content" style="display:none;">
-  <h1>😂 Abey <span style="color:blue">Chomu</span>!</h1>
-  <div class="roast">
-    <p>Tune socha QR code se kuch cool milega?</p>
-    <p>Mil gaya na... apni aukaat ka live telecast 😎</p>
-    <p>Gaali of the Day: "Tera dimaag Windows Vista pe chal raha hai!"</p>
+
+  <h2>Password daal Pappu</h2>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="checkPassword()">Submit</button>
+
+  <div id="content">
+    <h2>Chal Bhaag... 13 May ko open krna Pappu</h2>
+    <img src="funny-image.jpg" alt="Funny Image">
   </div>
 
-  <div class="video-container">
-    <p><strong>Bonus Video Tere Liye 🤣:</strong></p>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/kuchh-nhi/Bhiduu/main/6078098994150511919.mp4" type="video/mp4">
-      Tera browser video support nahi karta be!
-    </video>
-  </div>
-</div>
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value;
+      if (input === "I-am-chutiya") {
+        document.getElementById('content').style.display = 'block';
+      } else {
+        alert("Galat password hai 😜");
+      }
+    }
+  </script>
 </body>
 </html>
