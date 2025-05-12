@@ -13,9 +13,34 @@
       color: #333;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-top: 60px;
+    #protected-content {
+      display: none;
+    }
+
+    #password-screen {
+      margin-top: 150px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-size: 16px;
+      background-color: #ff1493;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0118b;
     }
 
     .photo {
@@ -84,28 +109,46 @@
 </head>
 <body>
 
-  <h1>Happy Birthday, Pappu 🎂🎈</h1>
+  <div id="password-screen">
+    <h2>Password daal Pappu 😏</h2>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+  </div>
 
-  <img src="images/image_2025-05-12_22-54-54.jpg" alt="Her Photo" class="photo">
+  <div id="protected-content">
+    <h1>Happy Birthday, Pappu 🎂🎈</h1>
 
-  <p class="message">
-    I hope tune aisaa kuchh phli baar ya kam hi dekha hogaa <br>
-    Engineer friend ki enginnering way me wish...Many many returns of the day ❤️
-  </p>
+    <img src="images/image_2025-05-12_22-54-54.jpg" alt="Her Photo" class="photo">
 
-  <img src="images/pngtree-colorful-birthday-cake-decorated-with-melted-strawberries-png-image_13063823.png" class="cake" alt="Cake">
+    <p class="message">
+      I hope tune aisaa kuchh phli baar ya kam hi dekha hogaa <br>
+      Engineer friend ki enginnering way me wish...Many many returns of the day ❤️
+    </p>
 
-  <button class="next-button" onclick="window.location.href='page2.html'">Aage chal...</button>
+    <img src="images/pngtree-colorful-birthday-cake-decorated-with-melted-strawberries-png-image_13063823.png" class="cake" alt="Cake">
+
+    <button class="next-button" onclick="window.location.href='page2.html'">Aage chal...</button>
+  </div>
 
   <!-- Balloons -->
   <script>
-    for (let i = 0; i < 20; i++) {
-      const balloon = document.createElement('img');
-      balloon.src = 'images/R.jpg';
-      balloon.className = 'balloon';
-      balloon.style.left = Math.random() * 100 + 'vw';
-      balloon.style.animationDelay = (Math.random() * 5) + 's';
-      document.body.appendChild(balloon);
+    function checkPassword() {
+      const correct = "I-am-chutiya";
+      const input = document.getElementById("password").value;
+      if (input === correct) {
+        document.getElementById("password-screen").style.display = "none";
+        document.getElementById("protected-content").style.display = "block";
+        for (let i = 0; i < 20; i++) {
+          const balloon = document.createElement('img');
+          balloon.src = 'images/R.jpg';
+          balloon.className = 'balloon';
+          balloon.style.left = Math.random() * 100 + 'vw';
+          balloon.style.animationDelay = (Math.random() * 5) + 's';
+          document.body.appendChild(balloon);
+        }
+      } else {
+        alert("Galat password daala re... dobara try kar");
+      }
     }
   </script>
 
